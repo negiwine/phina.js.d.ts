@@ -1,0 +1,16 @@
+{
+  "name": "phina.js.d.ts",
+  "version": "0.0.1",
+  "private": true,
+  "description": "unofficial type definitions for phina.js",
+  "main": "",
+  "keywords": [
+    "phina.js"
+  ],
+  "repository": "https://github.com/negiwine/phina.js.d.ts",
+  "author": "negiwine",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "2.7.2"
+  }
+}
