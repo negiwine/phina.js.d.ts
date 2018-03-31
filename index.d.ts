@@ -1766,6 +1766,11 @@ declare namespace phina {
             interactive: boolean
             setInteractive(flag: boolean): void
 
+            canvas: graphics.Canvas
+            renderer: CanvasRenderer
+            backgroundColor: string
+            width: number
+            height: number
             gridX: util.Grid
             gridY: util.Grid
         }
