@@ -2,7 +2,7 @@ export = phina
 export as namespace phina
 
 declare namespace phina {
-    
+
     interface CreateClassParams {
         superClass?: Function
         init?: Function
@@ -275,9 +275,9 @@ declare namespace phina {
             //accessors
             easing: string
 
-            fromTo(target: {}, biginProps: {}, finishProps: {}, duration: number, easing: EasingType): this
+            fromTo(target: {}, beginProps: {}, finishProps: {}, duration: number, easing: EasingType): this
             to(target: {}, finishProps: {}, duration: number, easing: EasingType): this
-            from(target: {}, biginProps: {}, duration: number, easing: EasingType): this
+            from(target: {}, beginProps: {}, duration: number, easing: EasingType): this
             by(target: {}, props: {}, duration: {}, easing: EasingType): this
             yoyo(): this
             gain(time: number): this
@@ -1411,7 +1411,7 @@ declare namespace phina {
             fitScreen(isEver: boolean): void
             clear(x: number, y: number, width: number, height: number): this
             clearColor(fillStyle: string, x: number, y: number, width: number, height: number): this
-            biginPath(): this
+            beginPath(): this
             closePath(): this
             moveTo(x: number, y: number): this
             lineTo(x: number, y: number): this
