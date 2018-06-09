@@ -2038,8 +2038,8 @@ declare namespace phina {
             className: string
             label: string | number
             nextLabel: string | number
-            arguments: {}
-            nextArguments: {}
+            arguments?: {}
+            nextArguments?: {}
         }
         interface ManagerScene extends app.Scene {
             setScene(scenes: ManagerSceneData[]): this
