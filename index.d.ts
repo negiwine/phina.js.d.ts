@@ -1843,6 +1843,8 @@ declare namespace phina {
         var DomApp: DomAppStatic
 
         interface CanvasAppOptions extends Partial<DomAppOptions> {
+            width?: number
+            height?: number
             append?: boolean
             fit?: boolean
             pixelated?: boolean
