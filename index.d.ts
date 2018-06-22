@@ -1833,8 +1833,8 @@ declare namespace phina {
             touchList: input.TouchList
             keyboard: input.KeyBoard
             accelerometer: input.Accelerometer
-            pointer: Touch
-            pointers: Touch[]
+            pointer: input.Touch
+            pointers: input.Touch[]
         }
         interface DomAppStatic {
             new(options: DomAppOptions): DomApp
