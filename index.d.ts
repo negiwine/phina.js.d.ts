@@ -1260,6 +1260,7 @@ declare namespace phina {
     namespace accessory {
 
         interface Accessory extends util.EventDispatcher {
+            target?: app.Element
             setTarget(target: app.Element): this
             getTarget(): void | app.Element
             isAttached(): boolean
