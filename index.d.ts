@@ -2214,7 +2214,7 @@ declare global {
 
         most(func?: (elm: T, i: number, self: this) => T, self?: {}): { max: T, min: T }
     }
-    interface Arrayvarructor {
+    interface ArrayConstructor {
         range(range: number): number[]
         range(start: number, end: number, step?: number): number[]
         of(...args: any[]): any[]
