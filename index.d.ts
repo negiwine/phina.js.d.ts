@@ -1134,7 +1134,7 @@ declare namespace phina {
             children: Element[]
             awake: boolean
 
-            update?(): void
+            update?(app: display.DomApp): void
 
             addChild(child: Element): Element
             addChildTo(parent: Element): this
