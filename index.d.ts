@@ -254,7 +254,7 @@ declare namespace phina {
             on(type: string, listener: Function): this
             off(type: string, listener: Function): this
             fire(e: { type: string }): this
-            flare(type: string, param: {}): this
+            flare(type: string, param?: {}): this
             one(type: string, listener: Function): this
             has(type: string): boolean
             clear(type: string): this
