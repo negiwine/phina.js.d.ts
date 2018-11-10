@@ -832,8 +832,8 @@ declare namespace phina {
         }
         var TouchList: TouchListStatic
 
-        type KeyType = keyof phina.input.KeyBoardStatic['KEY_CODE']
-        interface KeyBoard extends Input {
+        type KeyType = keyof phina.input.KeyboardStatic['KEY_CODE']
+        interface Keyboard extends Input {
             key: { [key: number]: boolean }
             press: { [key: number]: boolean }
             down: { [key: number]: boolean }
@@ -849,9 +849,9 @@ declare namespace phina {
             setKey(key: number | KeyType, flag: boolean): this
             clearKey(): this
         }
-        interface KeyBoardStatic {
-            new(domElement: HTMLElement): KeyBoard
-            (domElement: HTMLElement): KeyBoard
+        interface KeyboardStatic {
+            new(domElement: HTMLElement): Keyboard
+            (domElement: HTMLElement): Keyboard
 
             ARROW_BIT_TO_ANGLE_TABLE: {
                 0x01: number
@@ -999,7 +999,7 @@ declare namespace phina {
                 'space': number
             }
         }
-        var KeyBoard: KeyBoardStatic
+        var Keyboard: KeyboardStatic
 
         interface GamepadManager extends util.EventDispatcher {
             gamepads: { [key: number]: Gamepad }
@@ -1833,7 +1833,7 @@ declare namespace phina {
             mouse: input.Mouse
             touch: input.Touch
             touchList: input.TouchList
-            keyboard: input.KeyBoard
+            keyboard: input.Keyboard
             accelerometer: input.Accelerometer
             pointer: input.Touch
             pointers: input.Touch[]
