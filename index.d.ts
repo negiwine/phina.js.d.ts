@@ -1410,9 +1410,9 @@ declare namespace phina {
 
             setSize(width: number, height: number): this
             setSizeToScreen(): void
-            fitScreen(isEver: boolean): void
-            clear(x: number, y: number, width: number, height: number): this
-            clearColor(fillStyle: string, x: number, y: number, width: number, height: number): this
+            fitScreen(isEver?: boolean): void
+            clear(x?: number, y?: number, width?: number, height?: number): this
+            clearColor(fillStyle: string, x?: number, y?: number, width?: number, height?: number): this
             beginPath(): this
             closePath(): this
             moveTo(x: number, y: number): this
@@ -1425,8 +1425,8 @@ declare namespace phina {
             drawPoint(x: number, y: number): this
             line(x0: number, y0: number, x1: number, y1: number): this
             drawLine(x0: number, y0: number, x1: number, y1: number): this
-            drawDashLine(x0: number, y0: number, x1: number, y1: number, pattern: string | number): this
-            drawArrow(x0: number, y0: number, x1: number, y1: number, arrowRadius: number): this
+            drawDashLine(x0: number, y0: number, x1: number, y1: number, pattern?: string | number): this
+            drawArrow(x0: number, y0: number, x1: number, y1: number, arrowRadius?: number): this
             lines(...points: number[]): this
             strokeLines(x0: number, y0: number, x1: number, y1: number): this
             fillLines(...points: number[]): this
@@ -1443,15 +1443,15 @@ declare namespace phina {
             fillArc(x: number, y: number, startAngle: number, setAngle: number, anticlockwise: boolean): this
             strokeArc(x: number, y: number, startAngle: number, setAngle: number, anticlockwise: boolean): this
             pie(x: number, y: number, startAngle: number, setAngle: number, anticlockwise: boolean): this
-            polygon(x: number, y: number, size: number, offsetAngle: number): this
-            fillPolygon(x: number, y: number, size: number, offsetAngle: number): this
-            strokePolygon(x: number, y: number, size: number, offsetAngle: number): this
-            star(x: number, y: number, radius: number, sides: number, sideIndent: number, offsetAngle: number): this
-            fillStar(x: number, y: number, radius: number, sides: number, sideIndent: number, offsetAngle: number): this
-            strokeStar(x: number, y: number, radius: number, sides: number, sideIndent: number, offsetAngle: number): this
-            heart(x: number, y: number, radius: number, angle: number): this
-            fillHeart(x: number, y: number, radius: number, angle: number): this
-            strokeHeart(x: number, y: number, radius: number, angle: number): this
+            polygon(x: number, y: number, size: number, offsetAngle?: number): this
+            fillPolygon(x: number, y: number, size: number, offsetAngle?: number): this
+            strokePolygon(x: number, y: number, size: number, offsetAngle?: number): this
+            star(x?: number, y?: number, radius?: number, sides?: number, sideIndent?: number, offsetAngle?: number): this
+            fillStar(x?: number, y?: number, radius?: number, sides?: number, sideIndent?: number, offsetAngle?: number): this
+            strokeStar(x?: number, y?: number, radius?: number, sides?: number, sideIndent?: number, offsetAngle?: number): this
+            heart(x: number, y: number, radius: number, angle?: number): this
+            fillHeart(x: number, y: number, radius: number, angle?: number): this
+            strokeHeart(x: number, y: number, radius: number, angle?: number): this
             ellipse(x: number, y: number, w: number, h: number): this
             fillEllipse(x: number, y: number, w: number, h: number): this
             strokeEllipse(x: number, y: number, w: number, h: number): this
@@ -1468,7 +1468,7 @@ declare namespace phina {
             scale(scaleX: number, scaleY: number): this
             save(): this
             restore(): this
-            saveAsImage(mime_type: string): this
+            saveAsImage(mime_type?: string): this
         }
         interface CanvasStatic {
             new(canvas?: string | HTMLCanvasElement): Canvas
