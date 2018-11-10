@@ -75,6 +75,7 @@ declare namespace phina {
             clone(): Vector2
             equals(v: Vector2): boolean
             set(x: number, y: number): this
+            add(v: Vector2): this
             sub(v: Vector2): this
             mul(n: number): this
             div(n: number): this
