@@ -90,8 +90,8 @@ declare global {
     //type TouchList = phina.input.TouchList
     //var TouchList: phina.input.TouchListStatic
 
-    type KeyBoard = phina.input.KeyBoard
-    var KeyBoard: phina.input.KeyBoardStatic
+    type Keyboard = phina.input.Keyboard
+    var Keyboard: phina.input.KeyboardStatic
 
     type GamepadManager = phina.input.GamepadManager
     var GamepadManager: phina.input.GamepadManagerStatic
