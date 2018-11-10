@@ -654,7 +654,7 @@ declare namespace phina {
             stop(): this
             pause(): this
             resume(): this
-            loadFromBuffer(buffer: AudioBuffer): this
+            loadFromBuffer(buffer?: AudioBuffer): this
             setLoop(loop: boolean): this
             setLoopStart(loopStart: number): this
             setLoopEnd(loopEnd: number): this
