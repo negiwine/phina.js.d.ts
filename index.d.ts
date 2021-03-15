@@ -1248,7 +1248,7 @@ declare namespace phina {
         var Object2D: Object2DStatic
 
         interface Scene extends Element {
-            exit(naxtLabel: string, nextArguments: {}): this
+            exit(naxtLabel?: string, nextArguments?: {}): this
         }
         interface SceneStatic {
             new(): Scene
