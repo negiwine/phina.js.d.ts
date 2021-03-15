@@ -1145,7 +1145,7 @@ declare namespace phina {
             getChildIndex(child: Element): number
             getParent(): void | Element
             getRoot(): void | Element
-            removeChild(child: Element): this
+            removeChild(child: Element): Element
             remove(): void | this
             isAwake(): boolean
             wakeUp(): this
