@@ -350,7 +350,7 @@ declare namespace phina {
             run(): number
             start(): this
             resume(): any //TODO
-            stop(): any
+            stop(): this
             rewind(): any //TODO
         }
         interface TickerStatic {
