@@ -696,8 +696,8 @@ declare namespace phina {
         interface SpriteSheetFrame {
             x: number,
             y: number
-            width: number
-            height: number
+            cols: number
+            rows: number
         }
         type SpriteSheetAnimation = {
             frames: number[]
