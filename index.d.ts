@@ -52,7 +52,7 @@ declare namespace phina {
     var VERSION: string
     function isNode(): boolean
     function namespace(): void
-    var global: {}
+    var global: object
     function testUA(): boolean
     function isAndroid(): boolean
     function isIPhone(): boolean
@@ -254,7 +254,7 @@ declare namespace phina {
             on(type: string, listener: Function): this
             off(type: string, listener: Function): this
             fire(e: { type: string }): this
-            flare(type: string, param?: {}): this
+            flare(type: string, param?: object): this
             one(type: string, listener: Function): this
             has(type: string): boolean
             clear(type: string): this
@@ -263,7 +263,7 @@ declare namespace phina {
             clearEventListener(type: string): this
             hasEventListener(type: string): boolean
             dispatchEvent(e: { type: string }): this
-            dispatchEventByType(type: string, param: {}): this
+            dispatchEventByType(type: string, param: object): this
         }
         interface EventDispatcherStatic {
             new(): EventDispatcher
@@ -276,10 +276,10 @@ declare namespace phina {
             //accessors
             easing: string
 
-            fromTo(target: {}, beginProps: {}, finishProps: {}, duration: number, easing: EasingType): this
-            to(target: {}, finishProps: {}, duration: number, easing: EasingType): this
-            from(target: {}, beginProps: {}, duration: number, easing: EasingType): this
-            by(target: {}, props: {}, duration: {}, easing: EasingType): this
+            fromTo(target: object, beginProps: object, finishProps: object, duration: number, easing: EasingType): this
+            to(target: object, finishProps: object, duration: number, easing: EasingType): this
+            from(target: object, beginProps: object, duration: number, easing: EasingType): this
+            by(target: object, props: object, duration: object, easing: EasingType): this
             yoyo(): this
             gain(time: number): this
             forward(time: number): this
@@ -287,8 +287,8 @@ declare namespace phina {
             seek(time: number): this
         }
         interface TweenStatic {
-            new(target: {}): Tween
-            (target: {}): Tween
+            new(target: object): Tween
+            (target: object): Tween
 
             EASING: {
                 default(t: number, b: number, c: number, d: number): number
@@ -386,7 +386,7 @@ declare namespace phina {
         var Grid: GridStatic
 
         interface ChangeDispatcher extends EventDispatcher {
-            register(obj: {}): this
+            register(obj: object): this
             register(key: string, defaultValue: any): this
             observe(): void
             unobserve(): void
@@ -511,8 +511,8 @@ declare namespace phina {
         var Random: RandomStatic
 
         interface QueryStringStatic {
-            parse(text?: string, sep?: string, eq?: string, isDecode?: boolean): {}
-            stringify(value: {}, sep?: string, eq?: string, isEncode?: boolean): string
+            parse(text?: string, sep?: string, eq?: string, isDecode?: boolean): object
+            stringify(value: object, sep?: string, eq?: string, isEncode?: boolean): string
         }
         var QueryString: QueryStringStatic
 
@@ -588,7 +588,7 @@ declare namespace phina {
             path: string
         ) => util.Flow<any>
         interface AssetLoader extends util.EventDispatcher {
-            assets: {}
+            assets: object
 
             load(params: AssetLoaderLoadParams): util.Flow<null>
         }
@@ -602,7 +602,7 @@ declare namespace phina {
         var AssetLoader: AssetLoaderStatic
 
         interface File extends Asset {
-            data: {} | null
+            data: object | null
         }
         interface FileStatic {
             new(): File
@@ -1150,8 +1150,8 @@ declare namespace phina {
             isAwake(): boolean
             wakeUp(): this
             sleep(): this
-            fromJson(json: {}): this
-            toJson(): {}
+            fromJson(json: object): this
+            toJson(): object
 
             //accessory.js
             attach(accessory: accessory.Accessory): this
@@ -1248,7 +1248,7 @@ declare namespace phina {
         var Object2D: Object2DStatic
 
         interface Scene extends Element {
-            exit(naxtLabel?: string, nextArguments?: {}): this
+            exit(naxtLabel?: string, nextArguments?: object): this
         }
         interface SceneStatic {
             new(): Scene
@@ -1278,9 +1278,9 @@ declare namespace phina {
         interface Tweener extends Accessory {
             update(): void
             setUpdateType(type: UpdateType): this
-            to(props: {}, duration?: number, easing?: util.EasingType): this
-            by(props: {}, duration?: number, easing?: util.EasingType): this
-            from(props: {}, duration?: number, easing?: util.EasingType): this
+            to(props: object, duration?: number, easing?: util.EasingType): this
+            by(props: object, duration?: number, easing?: util.EasingType): this
+            from(props: object, duration?: number, easing?: util.EasingType): this
             wait(time: number): this
             call(func: (...args: any[]) => void, self?: {}, args?: any): this
             set(key: string, value: any): this
@@ -1300,7 +1300,7 @@ declare namespace phina {
             yoyo(): this
             setLoop(flag: boolean): this
             clear(): this
-            fromJSON(json: {}): this
+            fromJSON(json: object): this
         }
         interface TweenerStatic {
             new(target?: app.Element): Tweener
@@ -2040,14 +2040,14 @@ declare namespace phina {
             className: string
             label: string | number
             nextLabel: string | number
-            arguments?: {}
-            nextArguments?: {}
+            arguments?: object
+            nextArguments?: object
         }
         interface ManagerScene extends app.Scene {
             setScene(scenes: ManagerSceneData[]): this
-            replaceScene(label: string | number, args: {}): this
-            gotoScene(label: string | number, args: {}): this
-            gotoNext(args: {}): this
+            replaceScene(label: string | number, args: object): this
+            gotoScene(label: string | number, args: object): this
+            gotoNext(args: object): this
             getCurrentSceneIndex(): number
             labelToIndex(label: string): number
             indexToLabel(index: number): string
@@ -2068,7 +2068,7 @@ declare namespace phina {
         interface GameAppOptions extends Partial<display.CanvasAppOptions> {
             startLabel?: string
             scenes?: ManagerSceneData[]
-            assets?: {}
+            assets?: object
             autoPause?: boolean
         }
         interface GameApp extends display.CanvasApp {
@@ -2119,11 +2119,11 @@ declare global {
         $get(key: string): any
         $set(key: string, value: any): void
         $has(key: string): boolean
-        $extend(...objects: {}[]): this
-        $safe(...objects: {}[]): this
-        $strict(...objects: {}[]): this
-        $pick(...keys: string[]): {}
-        $omit(...keys: string[]): {}
+        $extend(...objects: object[]): this
+        $safe(...objects: object[]): this
+        $strict(...objects: object[]): this
+        $pick(...keys: string[]): object
+        $omit(...keys: string[]): object
         $toArray(): any[]
         $watch(key: string, callback: Function): void
     }
@@ -2177,7 +2177,7 @@ declare global {
         include(str: string): boolean
         each(fn: Function, self?: {}): this
         toArray(): string[]
-        toObject(sep?: string, eq?: string): {}
+        toObject(sep?: string, eq?: string): object
         toCRC32(): number
     }
 
@@ -2221,7 +2221,7 @@ declare global {
         range(start: number, end: number, step?: number): number[]
         of(...args: any[]): any[]
         of<T>(...args: T[]): T[]
-        from(arrayLike: {}, callback?: Function, context?: {}): any[]
+        from(arrayLike: object, callback?: Function, context?: {}): any[]
     }
 
     interface Date {
