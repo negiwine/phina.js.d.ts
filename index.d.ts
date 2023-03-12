@@ -1212,7 +1212,7 @@ declare namespace phina {
             hitTestCircle(x: number, y: number): boolean
             hitTestElement(elm: geom.Rect): boolean
             globalToLocal(p: geom.Vector2): geom.Vector2
-            setInteractive(flag: boolean, type: string): this
+            setInteractive(flag: boolean, type?: string): this
             setX(x: number): this
             setY(y: number): this
             setPosition(x: number, y: number): this
