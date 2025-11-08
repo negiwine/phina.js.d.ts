@@ -1,6 +1,6 @@
 {
   "name": "phina.js.d.ts",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "unofficial type definitions for phina.js",
   "main": "",
@@ -10,7 +10,12 @@
   "repository": "https://github.com/negiwine/phina.js.d.ts",
   "author": "negiwine",
   "license": "MIT",
+  "scripts": {
+    "docs": "typedoc --entryPoints index.d.ts --plugin typedoc-plugin-rename-defaults --out docs"
+  },
   "devDependencies": {
-    "typescript": "2.7.2"
+    "typedoc": "^0.28.14",
+    "typedoc-plugin-rename-defaults": "^0.7.3",
+    "typescript": "^5.9.3"
   }
 }
