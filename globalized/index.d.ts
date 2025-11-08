@@ -225,6 +225,6 @@ declare global {
     var CanvasScene: phina.display.CanvasSceneStatic
 
     type Twitter = phina.social.Twitter
-    var Twetter: phina.social.Twitter
+    var Twitter: phina.social.Twitter
 
 }
