@@ -1038,9 +1038,9 @@ declare namespace phina {
             getKey(button: string | number): boolean
             getKeyDown(button: string | number): boolean
             getKeyUp(button: string | number): boolean
-            getKeyAngle(): void | number
+            getKeyAngle(): number | undefined
             getKeyDirection(): geom.Vector2
-            getStickAngle(stickId: number): number | void
+            getStickAngle(stickId: number): number | undefined
         }
         interface GamepadStatic {
             new(index?: number): Gamepad
@@ -1143,10 +1143,10 @@ declare namespace phina {
             getChildAt(index: number): Element
             getChildByName(name: string): Element //TODO
             getChildIndex(child: Element): number
-            getParent(): void | Element
-            getRoot(): void | Element
+            getParent(): Element | undefined
+            getRoot(): Element | undefined
             removeChild(child: Element): Element
-            remove(): void | this
+            remove(): this | undefined
             isAwake(): boolean
             wakeUp(): this
             sleep(): this
@@ -1263,7 +1263,7 @@ declare namespace phina {
         interface Accessory extends util.EventDispatcher {
             target?: app.Element
             setTarget(target: app.Element): this
-            getTarget(): void | app.Element
+            getTarget(): app.Element | undefined
             isAttached(): boolean
             attachTo(element: app.Element): this
             remove(): void
@@ -2190,13 +2190,13 @@ declare global {
         deepEquals(arr: any[]): boolean
         contains(item: any, fromIndex?: number): boolean
         at(i: number): T
-        find(fn: (elm: T, i: number, self: this) => boolean, self?: {}): T & void
+        find(fn: (elm: T, i: number, self: this) => boolean, self?: {}): T | undefined
         findIndex(fn: (elm: T, i: number, self: this) => boolean, self?: {}): number
         swap(a: number, b: number): this
         erase(elm: any): this
         eraseAll(elm: any): this
-        eraseIf(fn: (elm: T, i: number, self: this) => boolean | void): this
-        eraseIfAll(fn: (elm: T, i: number, self: this) => boolean | void): this
+        eraseIf(fn: (elm: T, i: number, self: this) => boolean | undefined): this
+        eraseIfAll(fn: (elm: T, i: number, self: this) => boolean | undefined): this
         random(min?: number, max?: number): T
         pickup(min?: number, max?: number): T
         lot(min?: number, max?: number): T
